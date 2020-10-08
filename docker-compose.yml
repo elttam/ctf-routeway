@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  web:
+    build: ./containers/nginx/
+    image: libctfso-routeway-nginx
+    ports:
+      - "8080:80"
+    links:
+      - php
+
+  php:
+    build: ./containers/php/
+    image: libctfso-routeway-php
